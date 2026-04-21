@@ -9,6 +9,11 @@ records_per_patient = 100
 data = []
 
 for patient_id in range(1, num_patients + 1):
+    # patient info
+    name = f"Patient_{patient_id}"
+    age = random.randint(20, 80)
+    gender = random.choice(["Male", "Female"])
+
     base_time = datetime.now() - timedelta(days=10)
 
     for i in range(records_per_patient):
@@ -26,7 +31,7 @@ for patient_id in range(1, num_patients + 1):
             oxygen -= random.randint(5, 10)
 
         data.append([
-            patient_id,
+            patient_id, name, age, gender,
             timestamp,
             round(heart_rate, 2),
             round(bp_sys, 2),
@@ -36,9 +41,10 @@ for patient_id in range(1, num_patients + 1):
         ])
 
 df = pd.DataFrame(data, columns=[
-    "patient_id", "timestamp", "heart_rate",
+    "patient_id", "name", "age", "gender",
+    "timestamp", "heart_rate",
     "bp_sys", "bp_dia", "oxygen", "temperature"
 ])
 
-df.to_csv("vitals.csv", index=False)
-print("Dataset generated!")
+df.to_csv("healthcare_data.csv", index=False)
+print("healthcare_data.csv file generated!")
