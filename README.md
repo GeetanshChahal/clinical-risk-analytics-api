@@ -1,6 +1,6 @@
 # 🏥 Clinical Risk Analytics API
 
-A production-style healthcare data system that simulates patient monitoring, processes clinical data, and detects early risk patterns using **FastAPI, PostgreSQL, and Pandas**.
+A production-style healthcare data system that simulates patient monitoring, processes clinical data, and detects early risk patterns using **Python, Numpy, Pandas, FastAPI and PostgreSQL**.
 
 ---
 
